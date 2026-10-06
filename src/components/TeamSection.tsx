@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react"
 
 interface TeamMember {
   id: string
-  type: "founder" | "advisor" | "subject" | "bridge"
+  type: "founder" | "lead" | "subject" | "bridge"
   name: string
   nameLocalized?: string
   title: string
@@ -17,71 +17,38 @@ interface TeamMember {
 
 const TEAM: TeamMember[] = [
   {
-    id: "yashas",
+    id: "cristian",
     type: "founder",
-    name: "Yashas S Karanam",
-    title: "Founder & Principal Investigator",
-    affiliation: "Clemson University · MS Computer Science (AI)",
+    name: "Cristián Núñez Gana",
+    title: "Founder & CEO",
+    affiliation: "Veridical Mind SpA · Santiago, Chile",
     credentials: [
-      "Computational Semantics",
-      "Hallucination Suppression",
-      "Evidence-Grounded NLP",
+      "AI · Trust · Evidence",
+      "Product Direction",
+      "Chile–India Collaboration",
     ],
-    bio: "Sole architect and engineer of the full-stack Veridical Mind platform — encompassing the backend inference engine, MCG classification pipeline, Qdrant vector infrastructure, evidence grounding system, and production frontend. Previously contributed to ML pipelines at Rolls-Royce and Caterpillar, and data infrastructure at Cisco. Academic advisor collaborations span the Chile–India research axis.",
-    domain: ["Backend · Inference", "Vector DB · Qdrant", "MCG Pipeline", "Frontend · UI/UX"],
+    bio: "Founder and CEO of Veridical Mind SpA, leading the product direction and broader vision of the project. Works with Yashas Sadananda across the Chile–India axis on the architecture, research direction, and technical development of Veridical Mind. His work connects the project's focus on AI, trust, evidence, memory, meaning, and human-centered technology with its practical development and long-term direction.",
+    domain: ["Product · Strategy", "Research Direction", "AI · Trust · Evidence", "Chile · India"],
     accentClass: "copper",
-    badgeLabel: "Principal Investigator",
+    badgeLabel: "Founder & CEO",
     index: "00",
   },
   {
-    id: "cristian",
-    type: "advisor",
-    name: "Dr. Cristian Larroulet Vignau",
-    title: "Institutional Advisor",
-    affiliation: "Libertad y Desarrollo · Former Minister of the Presidency, Chile",
+    id: "yashas",
+    type: "lead",
+    name: "Yashas Sadananda",
+    title: "Lead Developer",
+    affiliation: "PES University · Computer Science Engineering · Bengaluru, India",
     credentials: [
-      "PhD Economics",
-      "Chilean Institutional Governance",
-      "Economic Reform",
+      "AI/ML Engineering",
+      "Evidence-Grounded NLP",
+      "Full-Stack Implementation",
     ],
-    bio: "Former Minister of the Presidency under President Sebastián Piñera. A leading Chilean economist, think tank scholar, and institutional governance expert whose work at Libertad y Desarrollo has shaped Chilean economic and public-sector reform. Provides Veridical Mind with deep institutional legitimacy and strategic advisory grounding.",
-    domain: ["Institutional Governance", "Policy Advisory", "Chilean Institutional History"],
+    bio: "Lead developer and technical collaborator working with Veridical Mind on the implementation of the platform. Responsible for translating the project's evidence-governed AI architecture into a functioning technical system, working across the backend inference and retrieval pipeline, evidence grounding, Qdrant vector infrastructure, MCG pipeline, and production frontend. Works directly with Cristian Núñez Gana on architecture, technical development, research implementation, and validation.",
+    domain: ["Backend · Inference", "Vector DB · Qdrant", "MCG Pipeline", "Frontend · UI/UX"],
     accentClass: "stone",
-    badgeLabel: "Institutional Advisor",
+    badgeLabel: "Lead Developer",
     index: "01",
-  },
-  {
-    id: "isabel",
-    type: "bridge",
-    name: "Isabel Margarita Eastman-Morales",
-    title: "Institutional Bridge · Cultural Steward",
-    affiliation: "Goyenechea-Cousiño Family Lineage",
-    credentials: [
-      "Family Lineage Continuity",
-      "Living Cultural Stewardship",
-    ],
-    bio: "A direct descendant of Isidora Goyenechea de Cousiño, Isabel provides the irreplaceable bridge between the historical archive and the living legacy of the Goyenechea-Cousiño family. Her participation lends the project its deepest authenticity — anchoring Veridical Mind not just in documents and data, but in living historical memory.",
-    domain: ["Cultural Heritage", "Lineage Continuity", "Historical Authenticity"],
-    accentClass: "warm",
-    badgeLabel: "Cultural Bridge",
-    index: "02",
-  },
-  {
-    id: "inder",
-    type: "advisor",
-    name: "Dr. Inder Monga",
-    title: "Technical Advisor",
-    affiliation: "ESnet · U.S. Department of Energy",
-    credentials: [
-      "Director, ESnet",
-      "Large-Scale Distributed Systems",
-      "Science Network Infrastructure",
-    ],
-    bio: "Director of ESnet, the U.S. Department of Energy's high-performance science network connecting national laboratories, supercomputing centers, and research institutions worldwide. Brings world-class expertise in distributed data systems, scientific infrastructure, and large-scale network architecture to Veridical Mind's technical advisory layer.",
-    domain: ["Distributed Systems", "Science Networks", "Data Infrastructure"],
-    accentClass: "blue",
-    badgeLabel: "Technical Advisor",
-    index: "03",
   },
   {
     id: "isidora",
@@ -302,7 +269,7 @@ export function TeamSection() {
     return () => obs.disconnect()
   }, [])
 
-  // Split: main team (4) + subject (1)
+  // Split: core team (2) + subject (1)
   const mainTeam = TEAM.filter((m) => m.type !== "subject")
   const subject = TEAM.find((m) => m.type === "subject")!
 
