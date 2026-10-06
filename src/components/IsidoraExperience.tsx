@@ -277,7 +277,7 @@ export const IsidoraExperience: React.FC = () => {
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="Ask about Isidora's legacy, Palacio Cousiño, or test refusal..."
-                    className="w-full rounded-2xl border border-white/15 bg-[#0b0c10] px-5 py-4 pr-14 text-sm text-[#f4efe4] placeholder:text-white/30 focus:border-[#c99750] focus:outline-none focus:ring-1 focus:ring-[#c99750] font-sans-ui"
+                    className="w-full rounded-2xl border border-white/15 bg-[#0b0c10] px-5 py-4 pr-32 text-sm text-[#f4efe4] placeholder:text-white/30 focus:border-[#c99750] focus:outline-none focus:ring-1 focus:ring-[#c99750] font-sans-ui"
                   />
                   <button
                     type="button"
