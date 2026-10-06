@@ -75,7 +75,7 @@ function App() {
     const clean = question.trim()
     if (!clean || loading) return
 
-    setQuery(clean)
+    setQuery("")
     setLoading(true)
     setError("")
     setAnswer(null)
@@ -355,7 +355,7 @@ function App() {
                         {answer.response}
                       </p>
 
-                      {answer.evidence.length > 0 && (
+                      {answer.category !== "C" && answer.evidence.length > 0 && (
                         <div className="mt-8 border-t border-white/10 pt-6">
                           <div className="mb-4 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/35">
                             Documentary evidence
