@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react"
-import { ArrowUpRight, Menu, X, Sparkles } from "lucide-react"
+import { Menu, X } from "lucide-react"
 
 interface NavigationProps {
   onOpenDemo?: () => void
 }
 
-export const Navigation: React.FC<NavigationProps> = ({ onOpenDemo }) => {
+export const Navigation: React.FC<NavigationProps> = () => {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -94,15 +94,6 @@ export const Navigation: React.FC<NavigationProps> = ({ onOpenDemo }) => {
 
           {/* CTA & Actions */}
           <div className="flex items-center gap-3 sm:gap-4 shrink-0">
-            <a
-              href="#isidora"
-              onClick={onOpenDemo}
-              className="hidden sm:inline-flex items-center gap-2 rounded-full border border-[#c99750]/50 bg-[#c99750]/10 px-5 py-2.5 text-xs font-medium uppercase tracking-[0.16em] text-[#e0b472] transition-all duration-300 hover:bg-[#c99750] hover:text-[#0b0c0e] hover:shadow-[0_0_25px_rgba(201,151,80,0.4)] whitespace-nowrap"
-            >
-              <Sparkles size={13} className="text-[#c99750]" />
-              <span>Explore The System</span>
-              <ArrowUpRight size={13} />
-            </a>
 
             {/* Mobile / Tablet Hamburger */}
             <button

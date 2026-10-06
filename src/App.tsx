@@ -1,3 +1,4 @@
+import { FloatingIsidora } from "./components/FloatingIsidora"
 import { Navigation } from "./components/Navigation"
 import { Hero } from "./components/Hero"
 import { ProblemSection } from "./components/ProblemSection"
@@ -21,7 +22,7 @@ export function App() {
   return (
     <div className="min-h-screen bg-[#0b0c0e] text-[#f4efe4] selection:bg-[#c99750] selection:text-[#0b0c0e]">
       {/* Global Navigation */}
-      <Navigation onOpenDemo={scrollToIsidora} />
+      <Navigation onOpenDemo={scrollToIsidora} />`r`n      <FloatingIsidora onOpenDemo={scrollToIsidora} />
 
       <main id="top">
         {/* Cinematic Hero */}
