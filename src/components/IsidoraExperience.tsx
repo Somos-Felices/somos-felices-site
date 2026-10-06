@@ -10,6 +10,13 @@ export const IsidoraExperience: React.FC = () => {
   const [error, setError] = useState<string | null>(null)
   const [selectedEvidence, setSelectedEvidence] = useState<EvidenceItem | null>(null)
 
+  const clearExperience = () => {
+    setQuery("")
+    setResult(null)
+    setError(null)
+    setSelectedEvidence(null)
+  }
+
   // Real question test probes targeting both grounded queries and deliberate refusal (Category C)
   const quickQuestions = [
     {
@@ -272,6 +279,15 @@ export const IsidoraExperience: React.FC = () => {
                     placeholder="Ask about Isidora's legacy, Palacio Cousiño, or test refusal..."
                     className="w-full rounded-2xl border border-white/15 bg-[#0b0c10] px-5 py-4 pr-14 text-sm text-[#f4efe4] placeholder:text-white/30 focus:border-[#c99750] focus:outline-none focus:ring-1 focus:ring-[#c99750] font-sans-ui"
                   />
+                  <button
+                    type="button"
+                    onClick={clearExperience}
+                    disabled={!query && !result && !error}
+                    className="absolute right-14 rounded-lg px-2 py-1 text-[10px] uppercase tracking-wider text-white/40 hover:text-[#e0b472] disabled:opacity-20"
+                    aria-label="Clear Query"
+                  >
+                    Clear
+                  </button>
                   <button
                     type="submit"
                     disabled={!query.trim() || loading}
