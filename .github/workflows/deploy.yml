@@ -23,6 +23,8 @@ jobs:
         run: npm ci
 
       - name: Build
+        env:
+          VITE_API_BASE_URL: https://veridical-mind-core.onrender.com
         run: npm run build
 
       - name: Deploy to Namecheap
